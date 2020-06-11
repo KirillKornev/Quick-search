@@ -11,6 +11,8 @@ import AVKit
 
 class VideoViewController: UIViewController {
   
+  let check = CheckInternetConnection()
+  
   var videos = [VideoModel]()
   
   let fetchManager: RequstManagerProtocol = RequstManager()
@@ -29,6 +31,13 @@ class VideoViewController: UIViewController {
       tableView.rowHeight = UITableView.automaticDimension
       createBarItems()
       getVideoList()
+      check.checkConnection { (result) in
+        if result == false {
+          DispatchQueue.main.async {
+            self.showFailurInternetConnectionAlert()
+          }
+        }
+      }
     }
   
   func getVideoList() {
@@ -57,9 +66,6 @@ class VideoViewController: UIViewController {
     controller.delegate = self
     present(controller, animated: true, completion: nil)
   }
-  
-  //MARK:- Video
-
 }
 
 //MARK:- Extension
@@ -94,8 +100,6 @@ extension VideoViewController: UITableViewDataSource, UITableViewDelegate {
       player.playVideo()
     }
   }
-  
-  
 }
 
 extension VideoViewController: SettingsViewDelegate {
