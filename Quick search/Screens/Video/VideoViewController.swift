@@ -27,10 +27,10 @@ class VideoViewController: UIViewController {
       tableView.estimatedRowHeight = 400
       tableView.rowHeight = UITableView.automaticDimension
       createBarItems()
+      getVideoList()
     }
   
-  override func viewDidAppear(_ animated: Bool) {
-    super.viewDidAppear(animated)
+  func getVideoList() {
     fetchManager.loadVideoList { (videoList, error) in
       guard let unwrapVideos = videoList else { return }
       self.videos = unwrapVideos
