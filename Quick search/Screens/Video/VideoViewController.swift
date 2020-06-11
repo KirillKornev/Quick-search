@@ -10,6 +10,10 @@ import UIKit
 
 class VideoViewController: UIViewController {
   
+  var videos = [VideoModel]()
+  
+  let fetchManager: RequstManagerProtocol = RequstManager()
+  
   let assembly: ControllerBuilderProtocol = ControllerBuilder()
   
   @IBOutlet weak var tableView: UITableView!
@@ -24,6 +28,17 @@ class VideoViewController: UIViewController {
       tableView.rowHeight = UITableView.automaticDimension
       createBarItems()
     }
+  
+  override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
+    fetchManager.loadVideoList { (videoList, error) in
+      guard let unwrapVideos = videoList else { return }
+      self.videos = unwrapVideos
+      DispatchQueue.main.async {
+        self.tableView.reloadData()
+      }
+    }
+  }
   
   func setupTableViewCell() {
     let nibCell = UINib(nibName: String(describing: VideoCell.self), bundle: nil)
@@ -47,14 +62,28 @@ class VideoViewController: UIViewController {
 extension VideoViewController: UITableViewDataSource, UITableViewDelegate {
   
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return 10
+    return videos.count
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: VideoCell.self), for: indexPath) as? VideoCell else { return UITableViewCell()}
-    let image = UIImage(named: "search2")
-    cell.configureCell(text: "\(indexPath)", image: image!)
+    if videos.count != 0 {
+      cell.deletePicture()
+      let url = videos[indexPath.row].previewURL
+      let description = videos[indexPath.row].decription
+        fetchManager.loadPicture(url: url) { (image, error) in
+          guard let image = image else { return }
+          DispatchQueue.main.async {
+            cell.configureCell(text: description, image: image)
+          }
+      }
+    }
     return cell
+  }
+  
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    //open video
+
   }
   
   

@@ -15,8 +15,19 @@ class VideoCell: UITableViewCell {
   
   override func awakeFromNib() {
         super.awakeFromNib()
-    videoImage.contentMode = .scaleToFill
+    setDefaultImage()
+    
     }
+  
+  private func setDefaultImage() {
+    guard let image = UIImage(named: "search2") else { return }
+    videoImage.image = image
+    videoImage.contentMode = .scaleToFill
+  }
+  
+  func deletePicture() {
+    setDefaultImage()
+  }
 
   func configureCell(text: String, image: UIImage) {
     videoImage.image = image
