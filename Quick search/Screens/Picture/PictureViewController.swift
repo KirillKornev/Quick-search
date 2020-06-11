@@ -36,7 +36,6 @@ class PictureViewController: UIViewController {
   
   @objc
    func goToSettings() {
-    print("try settings")
     let controller = assembly.getSettingController()
     controller.delegate = self
     present(controller, animated: true, completion: nil)
@@ -60,11 +59,11 @@ extension PictureViewController: UICollectionViewDataSource, UICollectionViewDel
 
 extension PictureViewController: SettingsViewDelegate {
   func sendNumberOfItems(number: String) {
-    print("picture VC get \(number)")
+    print("video VC get \(number)")
   }
   
   func sendTheme(theme: String) {
-    print("picture VC get \(theme)")
+    print("video VC get \(theme)")
   }
   
 }

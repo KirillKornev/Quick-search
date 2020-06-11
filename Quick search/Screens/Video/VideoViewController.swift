@@ -10,6 +10,8 @@ import UIKit
 
 class VideoViewController: UIViewController {
   
+  let assembly: ControllerBuilderProtocol = ControllerBuilder()
+  
   @IBOutlet weak var tableView: UITableView!
   
     override func viewDidLoad() {
@@ -20,11 +22,24 @@ class VideoViewController: UIViewController {
       setupTableViewCell()
       tableView.estimatedRowHeight = 400
       tableView.rowHeight = UITableView.automaticDimension
+      createBarItems()
     }
   
   func setupTableViewCell() {
     let nibCell = UINib(nibName: String(describing: VideoCell.self), bundle: nil)
     tableView.register(nibCell, forCellReuseIdentifier: String(describing: VideoCell.self))
+  }
+  
+  private func createBarItems() {
+    let rightBarButtonItem = UIBarButtonItem(title: "Settings", style: .done, target: self, action: #selector(goToSettings))
+    self.navigationItem.rightBarButtonItem  = rightBarButtonItem
+  }
+  
+  @objc
+   func goToSettings() {
+    let controller = assembly.getSettingController()
+    controller.delegate = self
+    present(controller, animated: true, completion: nil)
   }
 
 }
@@ -42,5 +57,16 @@ extension VideoViewController: UITableViewDataSource, UITableViewDelegate {
     return cell
   }
   
+  
+}
+
+extension VideoViewController: SettingsViewDelegate {
+  func sendNumberOfItems(number: String) {
+    print("picture VC get \(number)")
+  }
+  
+  func sendTheme(theme: String) {
+    print("picture VC get \(theme)")
+  }
   
 }
