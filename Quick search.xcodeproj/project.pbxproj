@@ -19,6 +19,8 @@
 		EDC3F1F024927DED006CA194 /* PictureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC3F1EE24927DED006CA194 /* PictureViewController.swift */; };
 		EDC3F1F124927DED006CA194 /* PictureViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDC3F1EF24927DED006CA194 /* PictureViewController.xib */; };
 		EDC3F1F324927F3A006CA194 /* ControllerBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC3F1F224927F3A006CA194 /* ControllerBuilder.swift */; };
+		EDC3F1F6249284BE006CA194 /* VideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC3F1F4249284BE006CA194 /* VideoCell.swift */; };
+		EDC3F1F7249284BE006CA194 /* VideoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDC3F1F5249284BE006CA194 /* VideoCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,8 @@
 		EDC3F1EE24927DED006CA194 /* PictureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureViewController.swift; sourceTree = "<group>"; };
 		EDC3F1EF24927DED006CA194 /* PictureViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PictureViewController.xib; sourceTree = "<group>"; };
 		EDC3F1F224927F3A006CA194 /* ControllerBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControllerBuilder.swift; sourceTree = "<group>"; };
+		EDC3F1F4249284BE006CA194 /* VideoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCell.swift; sourceTree = "<group>"; };
+		EDC3F1F5249284BE006CA194 /* VideoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +100,7 @@
 			children = (
 				EDC3F1C424927541006CA194 /* VideoViewController.swift */,
 				EDC3F1C524927541006CA194 /* VideoViewController.xib */,
+				EDC3F1F8249284C5006CA194 /* VideoCell */,
 			);
 			path = Video;
 			sourceTree = "<group>";
@@ -115,6 +120,15 @@
 				EDC3F11D24910848006CA194 /* ViewController.swift */,
 			);
 			path = Search;
+			sourceTree = "<group>";
+		};
+		EDC3F1F8249284C5006CA194 /* VideoCell */ = {
+			isa = PBXGroup;
+			children = (
+				EDC3F1F4249284BE006CA194 /* VideoCell.swift */,
+				EDC3F1F5249284BE006CA194 /* VideoCell.xib */,
+			);
+			path = VideoCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -178,6 +192,7 @@
 				EDC3F1262491084C006CA194 /* LaunchScreen.storyboard in Resources */,
 				EDC3F1F124927DED006CA194 /* PictureViewController.xib in Resources */,
 				EDC3F1232491084C006CA194 /* Assets.xcassets in Resources */,
+				EDC3F1F7249284BE006CA194 /* VideoCell.xib in Resources */,
 				EDC3F1C724927541006CA194 /* VideoViewController.xib in Resources */,
 				EDC3F12124910848006CA194 /* Main.storyboard in Resources */,
 			);
@@ -191,6 +206,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EDC3F11E24910848006CA194 /* ViewController.swift in Sources */,
+				EDC3F1F6249284BE006CA194 /* VideoCell.swift in Sources */,
 				EDC3F1F324927F3A006CA194 /* ControllerBuilder.swift in Sources */,
 				EDC3F1F024927DED006CA194 /* PictureViewController.swift in Sources */,
 				EDC3F11A24910848006CA194 /* AppDelegate.swift in Sources */,
