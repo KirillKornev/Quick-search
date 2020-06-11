@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVKit
 
 class VideoViewController: UIViewController {
   
@@ -56,9 +57,12 @@ class VideoViewController: UIViewController {
     controller.delegate = self
     present(controller, animated: true, completion: nil)
   }
+  
+  //MARK:- Video
 
 }
 
+//MARK:- Extension
 extension VideoViewController: UITableViewDataSource, UITableViewDelegate {
   
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -71,6 +75,7 @@ extension VideoViewController: UITableViewDataSource, UITableViewDelegate {
       cell.deletePicture()
       let url = videos[indexPath.row].previewURL
       let description = videos[indexPath.row].decription
+      cell.deletePicture()
         fetchManager.loadPicture(url: url) { (image, error) in
           guard let image = image else { return }
           DispatchQueue.main.async {
@@ -82,8 +87,12 @@ extension VideoViewController: UITableViewDataSource, UITableViewDelegate {
   }
   
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    //open video
-
+    let url = videos[indexPath.row].pathURL
+    let player = VideoPlayer(url: url)
+    let playerController = player.getPlayerViewController()
+    present(playerController, animated: true) {
+      player.playVideo()
+    }
   }
   
   
