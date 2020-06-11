@@ -28,14 +28,13 @@ class TabBarController: UITabBarController {
     
     guard let items = tabBar.items else { return }
     for item in items {
-      item.imageInsets = UIEdgeInsets(top: 20, left: 0, bottom: 5, right: 0)
+      item.imageInsets = UIEdgeInsets(top: 20, left: 0, bottom: 20, right: 0)
     }
   }
 
 }
 
 extension TabBarController {
-  
   func createNavController(vc: UIViewController, icon: UIImage) -> UINavigationController {
     let navController = UINavigationController(rootViewController: vc)
     navController.tabBarItem.image = icon

@@ -13,6 +13,8 @@ class VideoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
       view.backgroundColor = .yellow
+//      navigationController?.navigationBar.prefersLargeTitles = true
+      self.title = "Videos"
     }
 
 }
