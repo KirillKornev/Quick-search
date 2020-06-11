@@ -25,8 +25,8 @@ class PictureViewController: UIViewController {
     }
   
   private func setupCollectionView() {
-    let nibCell = UINib(nibName: "PictureCell", bundle: nil)
-    collectionView.register(nibCell, forCellWithReuseIdentifier: "PictureCell")
+    let nibCell = UINib(nibName: String(describing: PictureCell.self), bundle: nil)
+    collectionView.register(nibCell, forCellWithReuseIdentifier: String(describing: PictureCell.self))
   }
   
   private func createBarItems() {
@@ -50,7 +50,7 @@ extension PictureViewController: UICollectionViewDataSource, UICollectionViewDel
   }
   
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PictureCell", for: indexPath) as? PictureCell else { return UICollectionViewCell()}
+    guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: PictureCell.self), for: indexPath) as? PictureCell else { return UICollectionViewCell()}
 //    cell.contentView.backgroundColor = .yellow
     return cell
   }
