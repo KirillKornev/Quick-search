@@ -11,6 +11,7 @@ import Foundation
 protocol ControllerBuilderProtocol {
   func getVideoController() -> VideoViewController
   func getPictureController() -> PictureViewController
+  func getSettingController() -> SettingsViewController 
 }
 
 class ControllerBuilder: ControllerBuilderProtocol {
@@ -23,5 +24,10 @@ class ControllerBuilder: ControllerBuilderProtocol {
   func getPictureController() -> PictureViewController {
     let pictureViewController = PictureViewController(nibName: String(describing: PictureViewController.self), bundle: nil)
     return pictureViewController
+  }
+  
+  func getSettingController() -> SettingsViewController {
+    let settingsViewController = SettingsViewController(nibName: String(describing: SettingsViewController.self), bundle: nil)
+    return settingsViewController
   }
 }

@@ -10,8 +10,8 @@
 		ED1351812492927D0097A3E3 /* PictureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED13517F2492927D0097A3E3 /* PictureCell.swift */; };
 		ED1351822492927D0097A3E3 /* PictureCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED1351802492927D0097A3E3 /* PictureCell.xib */; };
 		ED135184249293D60097A3E3 /* FlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED135183249293D60097A3E3 /* FlowLayout.swift */; };
-		ED13518D249296C00097A3E3 /* PictureSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED13518B249296C00097A3E3 /* PictureSettingsViewController.swift */; };
-		ED13518E249296C00097A3E3 /* PictureSettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED13518C249296C00097A3E3 /* PictureSettingsViewController.xib */; };
+		ED13518D249296C00097A3E3 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED13518B249296C00097A3E3 /* SettingsViewController.swift */; };
+		ED13518E249296C00097A3E3 /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED13518C249296C00097A3E3 /* SettingsViewController.xib */; };
 		EDC3F11A24910848006CA194 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC3F11924910848006CA194 /* AppDelegate.swift */; };
 		EDC3F11C24910848006CA194 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC3F11B24910848006CA194 /* SceneDelegate.swift */; };
 		EDC3F11E24910848006CA194 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC3F11D24910848006CA194 /* ViewController.swift */; };
@@ -32,8 +32,8 @@
 		ED13517F2492927D0097A3E3 /* PictureCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureCell.swift; sourceTree = "<group>"; };
 		ED1351802492927D0097A3E3 /* PictureCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PictureCell.xib; sourceTree = "<group>"; };
 		ED135183249293D60097A3E3 /* FlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowLayout.swift; sourceTree = "<group>"; };
-		ED13518B249296C00097A3E3 /* PictureSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureSettingsViewController.swift; sourceTree = "<group>"; };
-		ED13518C249296C00097A3E3 /* PictureSettingsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PictureSettingsViewController.xib; sourceTree = "<group>"; };
+		ED13518B249296C00097A3E3 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		ED13518C249296C00097A3E3 /* SettingsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
 		EDC3F11624910848006CA194 /* Quick search.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Quick search.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDC3F11924910848006CA194 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EDC3F11B24910848006CA194 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -73,13 +73,13 @@
 			path = PictureCell;
 			sourceTree = "<group>";
 		};
-		ED13518A249296A10097A3E3 /* PictureSettings */ = {
+		ED13518A249296A10097A3E3 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-				ED13518B249296C00097A3E3 /* PictureSettingsViewController.swift */,
-				ED13518C249296C00097A3E3 /* PictureSettingsViewController.xib */,
+				ED13518B249296C00097A3E3 /* SettingsViewController.swift */,
+				ED13518C249296C00097A3E3 /* SettingsViewController.xib */,
 			);
-			path = PictureSettings;
+			path = Settings;
 			sourceTree = "<group>";
 		};
 		EDC3F10D24910848006CA194 = {
@@ -117,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				EDC3F1CC249275F7006CA194 /* TabBarController.swift */,
+				ED13518A249296A10097A3E3 /* Settings */,
 				EDC3F1CB2492757E006CA194 /* Search */,
 				EDC3F1CA24927573006CA194 /* Picture */,
 				EDC3F1C92492755F006CA194 /* Video */,
@@ -137,7 +138,6 @@
 		EDC3F1CA24927573006CA194 /* Picture */ = {
 			isa = PBXGroup;
 			children = (
-				ED13518A249296A10097A3E3 /* PictureSettings */,
 				EDC3F1EE24927DED006CA194 /* PictureViewController.swift */,
 				EDC3F1EF24927DED006CA194 /* PictureViewController.xib */,
 				ED13517E2492925F0097A3E3 /* PictureCell */,
@@ -222,7 +222,7 @@
 			files = (
 				ED1351822492927D0097A3E3 /* PictureCell.xib in Resources */,
 				EDC3F1262491084C006CA194 /* LaunchScreen.storyboard in Resources */,
-				ED13518E249296C00097A3E3 /* PictureSettingsViewController.xib in Resources */,
+				ED13518E249296C00097A3E3 /* SettingsViewController.xib in Resources */,
 				EDC3F1F124927DED006CA194 /* PictureViewController.xib in Resources */,
 				EDC3F1232491084C006CA194 /* Assets.xcassets in Resources */,
 				EDC3F1F7249284BE006CA194 /* VideoCell.xib in Resources */,
@@ -246,7 +246,7 @@
 				ED1351812492927D0097A3E3 /* PictureCell.swift in Sources */,
 				EDC3F1C624927541006CA194 /* VideoViewController.swift in Sources */,
 				ED135184249293D60097A3E3 /* FlowLayout.swift in Sources */,
-				ED13518D249296C00097A3E3 /* PictureSettingsViewController.swift in Sources */,
+				ED13518D249296C00097A3E3 /* SettingsViewController.swift in Sources */,
 				EDC3F1CD249275F7006CA194 /* TabBarController.swift in Sources */,
 				EDC3F11C24910848006CA194 /* SceneDelegate.swift in Sources */,
 			);

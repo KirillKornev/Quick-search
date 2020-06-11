@@ -8,14 +8,28 @@
 
 import UIKit
 
-class PictureSettingsViewController: UIViewController {
+protocol SettingsViewDelegate {
+  func sendNumberOfItems(number: String)
+  func sendTheme(theme: String)
+}
+
+class SettingsViewController: UIViewController {
+  
+  var delegate: SettingsViewDelegate?
   
   @IBOutlet weak var numberOfPicturesPicker: UIPickerView!
   @IBOutlet weak var numberOfPicturesLabel: UILabel!
   @IBOutlet weak var themeLabel: UILabel!
   
-  let numberArray = ["5", "10", "15", "20", "25", "30"]
+  lazy var number = numberArray[0]
+  lazy var theme = themesArray[0]
   
+  @IBAction func saveButton(_ sender: UIButton) {
+    delegate?.sendTheme(theme: theme)
+    delegate?.sendNumberOfItems(number: number)
+  }
+  
+  let numberArray = ["5", "10", "15", "20", "25", "30"]
   let themesArray = ["Nature", "Cars", "Sport", "Phones", "Food", "Weather"]
   
   override func viewDidLoad() {
@@ -32,15 +46,17 @@ class PictureSettingsViewController: UIViewController {
   
   private func setPictureCount(count: String) {
     numberOfPicturesLabel.text = "Number of pictures: \(count)"
+    self.number = count
   }
   
   private func setTheme(theme: String) {
     themeLabel.text = "Theme: \(theme)"
+    self.theme = theme
   }
 
 }
 
-extension PictureSettingsViewController: UIPickerViewDataSource, UIPickerViewDelegate{
+extension SettingsViewController: UIPickerViewDataSource, UIPickerViewDelegate{
   
   func numberOfComponents(in pickerView: UIPickerView) -> Int {
     return 2

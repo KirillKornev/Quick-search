@@ -9,6 +9,8 @@
 import UIKit
 
 class PictureViewController: UIViewController {
+  
+  let assembly: ControllerBuilderProtocol = ControllerBuilder()
 
   @IBOutlet weak var collectionView: UICollectionView!
   
@@ -19,11 +21,25 @@ class PictureViewController: UIViewController {
     collectionView.dataSource = self
     collectionView.delegate = self
     setupCollectionView()
+    createBarItems()
     }
   
-  func setupCollectionView() {
+  private func setupCollectionView() {
     let nibCell = UINib(nibName: "PictureCell", bundle: nil)
     collectionView.register(nibCell, forCellWithReuseIdentifier: "PictureCell")
+  }
+  
+  private func createBarItems() {
+    let rightBarButtonItem = UIBarButtonItem(title: "Settings", style: .done, target: self, action: #selector(goToSettings))
+    self.navigationItem.rightBarButtonItem  = rightBarButtonItem
+  }
+  
+  @objc
+   func goToSettings() {
+    print("try settings")
+    let controller = assembly.getSettingController()
+    controller.delegate = self
+    present(controller, animated: true, completion: nil)
   }
 
 }
@@ -40,5 +56,15 @@ extension PictureViewController: UICollectionViewDataSource, UICollectionViewDel
     return cell
   }
   
+}
+
+extension PictureViewController: SettingsViewDelegate {
+  func sendNumberOfItems(number: String) {
+    print("picture VC get \(number)")
+  }
+  
+  func sendTheme(theme: String) {
+    print("picture VC get \(theme)")
+  }
   
 }
