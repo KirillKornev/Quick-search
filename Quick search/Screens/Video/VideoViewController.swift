@@ -14,7 +14,6 @@ class VideoViewController: UIViewController {
   
     override func viewDidLoad() {
         super.viewDidLoad()
-      view.backgroundColor = .yellow
       self.title = "Videos"
       tableView.dataSource = self
       tableView.delegate = self
@@ -38,8 +37,8 @@ extension VideoViewController: UITableViewDataSource, UITableViewDelegate {
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: VideoCell.self), for: indexPath) as? VideoCell else { return UITableViewCell()}
-    //code
-    cell.contentView.backgroundColor = .green
+    let image = UIImage(named: "search2")
+    cell.configureCell(text: "\(indexPath)", image: image!)
     return cell
   }
   

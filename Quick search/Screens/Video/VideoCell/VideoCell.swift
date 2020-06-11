@@ -10,15 +10,17 @@ import UIKit
 
 class VideoCell: UITableViewCell {
 
-    override func awakeFromNib() {
+  @IBOutlet weak var videoImage: UIImageView!
+  @IBOutlet weak var videoNameLabel: UILabel!
+  
+  override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+    videoImage.contentMode = .scaleToFill
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-    
+  func configureCell(text: String, image: UIImage) {
+    videoImage.image = image
+    videoNameLabel.text = text
+  }
+  
 }
