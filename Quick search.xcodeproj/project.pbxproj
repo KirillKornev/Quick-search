@@ -13,6 +13,12 @@
 		EDC3F12124910848006CA194 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDC3F11F24910848006CA194 /* Main.storyboard */; };
 		EDC3F1232491084C006CA194 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDC3F1222491084C006CA194 /* Assets.xcassets */; };
 		EDC3F1262491084C006CA194 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDC3F1242491084C006CA194 /* LaunchScreen.storyboard */; };
+		EDC3F1C624927541006CA194 /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC3F1C424927541006CA194 /* VideoViewController.swift */; };
+		EDC3F1C724927541006CA194 /* VideoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDC3F1C524927541006CA194 /* VideoViewController.xib */; };
+		EDC3F1CD249275F7006CA194 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC3F1CC249275F7006CA194 /* TabBarController.swift */; };
+		EDC3F1F024927DED006CA194 /* PictureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC3F1EE24927DED006CA194 /* PictureViewController.swift */; };
+		EDC3F1F124927DED006CA194 /* PictureViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDC3F1EF24927DED006CA194 /* PictureViewController.xib */; };
+		EDC3F1F324927F3A006CA194 /* ControllerBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC3F1F224927F3A006CA194 /* ControllerBuilder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +30,12 @@
 		EDC3F1222491084C006CA194 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EDC3F1252491084C006CA194 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EDC3F1272491084C006CA194 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EDC3F1C424927541006CA194 /* VideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
+		EDC3F1C524927541006CA194 /* VideoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoViewController.xib; sourceTree = "<group>"; };
+		EDC3F1CC249275F7006CA194 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		EDC3F1EE24927DED006CA194 /* PictureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureViewController.swift; sourceTree = "<group>"; };
+		EDC3F1EF24927DED006CA194 /* PictureViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PictureViewController.xib; sourceTree = "<group>"; };
+		EDC3F1F224927F3A006CA194 /* ControllerBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControllerBuilder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,13 +70,51 @@
 			children = (
 				EDC3F11924910848006CA194 /* AppDelegate.swift */,
 				EDC3F11B24910848006CA194 /* SceneDelegate.swift */,
-				EDC3F11D24910848006CA194 /* ViewController.swift */,
+				EDC3F1F224927F3A006CA194 /* ControllerBuilder.swift */,
+				EDC3F1C82492754E006CA194 /* Screens */,
 				EDC3F11F24910848006CA194 /* Main.storyboard */,
 				EDC3F1222491084C006CA194 /* Assets.xcassets */,
 				EDC3F1242491084C006CA194 /* LaunchScreen.storyboard */,
 				EDC3F1272491084C006CA194 /* Info.plist */,
 			);
 			path = "Quick search";
+			sourceTree = "<group>";
+		};
+		EDC3F1C82492754E006CA194 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				EDC3F1CC249275F7006CA194 /* TabBarController.swift */,
+				EDC3F1CB2492757E006CA194 /* Search */,
+				EDC3F1CA24927573006CA194 /* Picture */,
+				EDC3F1C92492755F006CA194 /* Video */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		EDC3F1C92492755F006CA194 /* Video */ = {
+			isa = PBXGroup;
+			children = (
+				EDC3F1C424927541006CA194 /* VideoViewController.swift */,
+				EDC3F1C524927541006CA194 /* VideoViewController.xib */,
+			);
+			path = Video;
+			sourceTree = "<group>";
+		};
+		EDC3F1CA24927573006CA194 /* Picture */ = {
+			isa = PBXGroup;
+			children = (
+				EDC3F1EE24927DED006CA194 /* PictureViewController.swift */,
+				EDC3F1EF24927DED006CA194 /* PictureViewController.xib */,
+			);
+			path = Picture;
+			sourceTree = "<group>";
+		};
+		EDC3F1CB2492757E006CA194 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				EDC3F11D24910848006CA194 /* ViewController.swift */,
+			);
+			path = Search;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,7 +176,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				EDC3F1262491084C006CA194 /* LaunchScreen.storyboard in Resources */,
+				EDC3F1F124927DED006CA194 /* PictureViewController.xib in Resources */,
 				EDC3F1232491084C006CA194 /* Assets.xcassets in Resources */,
+				EDC3F1C724927541006CA194 /* VideoViewController.xib in Resources */,
 				EDC3F12124910848006CA194 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -139,7 +191,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				EDC3F11E24910848006CA194 /* ViewController.swift in Sources */,
+				EDC3F1F324927F3A006CA194 /* ControllerBuilder.swift in Sources */,
+				EDC3F1F024927DED006CA194 /* PictureViewController.swift in Sources */,
 				EDC3F11A24910848006CA194 /* AppDelegate.swift in Sources */,
+				EDC3F1C624927541006CA194 /* VideoViewController.swift in Sources */,
+				EDC3F1CD249275F7006CA194 /* TabBarController.swift in Sources */,
 				EDC3F11C24910848006CA194 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
