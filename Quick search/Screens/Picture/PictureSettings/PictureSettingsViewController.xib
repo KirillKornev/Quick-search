@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PictureSettingsViewController" customModule="Quick_search" customModuleProvider="target">
+            <connections>
+                <outlet property="numberOfPicturesLabel" destination="VrI-OQ-q8y" id="trX-wC-gLF"/>
+                <outlet property="numberOfPicturesPicker" destination="aqB-S8-ZEU" id="9G4-8S-yBd"/>
+                <outlet property="themeLabel" destination="OSB-yV-E50" id="47d-wc-mKg"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aqB-S8-ZEU">
+                    <rect key="frame" x="0.0" y="593" width="414" height="269"/>
+                </pickerView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Theme:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OSB-yV-E50">
+                    <rect key="frame" x="20" y="309" width="76" height="27.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose number of pictures on the screen and theme:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hq7-ZK-oty">
+                    <rect key="frame" x="41.5" y="88" width="331" height="103.5"/>
+                    <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="30"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number of pictures:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VrI-OQ-q8y">
+                    <rect key="frame" x="20" y="241.5" width="196.5" height="27.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="VrI-OQ-q8y" firstAttribute="top" secondItem="hq7-ZK-oty" secondAttribute="bottom" constant="50" id="E2f-KB-jj0"/>
+                <constraint firstItem="VrI-OQ-q8y" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="KZs-cg-YPe"/>
+                <constraint firstItem="hq7-ZK-oty" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="Nyw-7r-VIq"/>
+                <constraint firstItem="aqB-S8-ZEU" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="QPO-D1-yhV"/>
+                <constraint firstItem="hq7-ZK-oty" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="44" id="Veu-sk-cgv"/>
+                <constraint firstItem="aqB-S8-ZEU" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="WMR-bi-jMX"/>
+                <constraint firstItem="OSB-yV-E50" firstAttribute="leading" secondItem="VrI-OQ-q8y" secondAttribute="leading" id="X40-RE-DoN"/>
+                <constraint firstItem="aqB-S8-ZEU" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.3" id="XiM-07-bS4"/>
+                <constraint firstItem="aqB-S8-ZEU" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="eNb-Ou-a18"/>
+                <constraint firstItem="OSB-yV-E50" firstAttribute="top" secondItem="VrI-OQ-q8y" secondAttribute="bottom" constant="40" id="ohD-R2-1kB"/>
+                <constraint firstItem="hq7-ZK-oty" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.8" id="rux-fF-GG6"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="137.68115942028987" y="116.51785714285714"/>
+        </view>
+    </objects>
+</document>
