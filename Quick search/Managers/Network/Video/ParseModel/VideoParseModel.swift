@@ -1,8 +1,8 @@
 //
-//  ImageModel.swift
+//  VideoParseModel.swift
 //  Quick search
 //
-//  Created by Кирилл on 6/11/20.
+//  Created by Кирилл on 6/12/20.
 //  Copyright © 2020 Kornev.com. All rights reserved.
 //
 
@@ -32,3 +32,4 @@ struct VideoModel {
   let previewURL: URL
   let decription: String
 }
+
