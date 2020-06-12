@@ -8,4 +8,18 @@
 
 import Foundation
 
+struct ImageDescriptionModel: Decodable {
+  let total: Int
+  let totalHits: Int
+  let hits: [Image]
+}
+
+struct Image: Decodable {
+  let webformatURL: URL
+}
+
+struct ImageModel {
+  let pathURL: URL
+}
+
 

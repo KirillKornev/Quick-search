@@ -6,9 +6,14 @@
 //  Copyright © 2020 Kornev.com. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
-class FetchVideosManager {
+protocol FetchVideosManagerProtocol {
+  func fetchVideosUrls(number: Int, theme: String, complitionHandler: (@escaping ([VideoModel]) -> Void))
+  func loadPicture(url: URL, completionHandler: @escaping (UIImage?) -> ())
+}
+
+class FetchVideosManager: FetchVideosManagerProtocol {
   
   let generalRequest = RequstManager()
   
@@ -18,9 +23,20 @@ class FetchVideosManager {
       switch result {
       case .failure(let error):
         print(error)
-//        complitionHandler(.failure(error))
       case .success(let model):
         complitionHandler(model)
+      }
+    }
+  }
+  
+  func loadPicture(url: URL, completionHandler: @escaping (UIImage?) -> ()) {
+    let configuration = RequestFactory.VideoItem.videoPictureConfig(url: url)
+    generalRequest.sendRequest(config: configuration) { (result) in
+      switch result {
+      case .failure(let error):
+        print(error)
+      case .success(let model):
+        completionHandler(model)
       }
     }
   }

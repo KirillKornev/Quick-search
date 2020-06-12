@@ -12,7 +12,6 @@ import Foundation
 class VideoRequest {
   
   var urlRequest: URLRequest?
-  
   init(numberOfItems: Int, theme: String) {
     urlRequest = URLRequest(url: createURL(item: numberOfItems, theme: theme))
   }
@@ -22,7 +21,6 @@ class VideoRequest {
     components.scheme = "https"
     components.host = "api.tenor.com"
     components.path = "/v1/search"
-
     let queryItems = [
                       URLQueryItem(name: "q", value: "\(theme)"),
                       URLQueryItem(name: "key", value: "3GUTCBEYYFEY"),
@@ -31,6 +29,13 @@ class VideoRequest {
     guard let url = components.url else {
       preconditionFailure( "Invalid URL components \(components)" ) }
     return url
+  }
+}
+
+class PictureGeneralRequest {
+  var urlRequest: URLRequest?
+  init(url: URL) {
+    urlRequest = URLRequest(url: url)
   }
 }
 

@@ -9,13 +9,24 @@
 import UIKit
 
 class PictureCell: UICollectionViewCell {
-
+  
   @IBOutlet weak var pictureImage: UIImageView!
   override func awakeFromNib() {
     
-        super.awakeFromNib()
+    super.awakeFromNib()
+    setDefaultImage()
+    pictureImage.contentMode = .scaleToFill
+  }
+  
+  func setDefaultImage() {
     guard let image = UIImage(named: "placeholder") else { return }
     pictureImage.image = image
-    }
+  }
+  
+  func configureCell(image: UIImage) {
+    print("configure cell")
+    pictureImage.image = image
+    
+  }
 
 }

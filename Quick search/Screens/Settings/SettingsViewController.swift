@@ -25,6 +25,7 @@ class SettingsViewController: UIViewController {
   
   @IBAction func saveButton(_ sender: UIButton) {
     delegate?.sendInfo(number: number, theme: theme)
+    self.dismiss(animated: true, completion: nil)
   }
   let numberArray = [5, 10, 15, 20, 25, 30]
   let numberArray1 = ["5", "10", "15", "20", "25", "30"]

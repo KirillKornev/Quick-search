@@ -40,7 +40,6 @@ class VideoViewController: UIViewController {
         if result == false {
           DispatchQueue.main.async {
             Alert.showFailurInternetConnectionAlert(on: self) {
-              print("try later")
             }
           }
         }
@@ -50,12 +49,10 @@ class VideoViewController: UIViewController {
   func getVideoList(number: Int, theme: String) {
     videoManager.fetchVideosUrls(number: numberOfItems, theme: theme) { (videoList) in
       self.videos = videoList
-      print("yeah")
       DispatchQueue.main.async {
         self.tableView.reloadData()
       }
     }
-    
   }
   
   func setupTableViewCell() {
@@ -90,11 +87,12 @@ extension VideoViewController: UITableViewDataSource, UITableViewDelegate {
       let url = videos[indexPath.row].previewURL
       let description = videos[indexPath.row].decription
       cell.deletePicture()
-        fetchManager.loadPicture(url: url) { (image, error) in
-          guard let image = image else { return }
-          DispatchQueue.main.async {
-            cell.configureCell(text: description, image: image)
-          }
+      
+      videoManager.loadPicture(url: url) { (image) in
+        guard let image = image else { return }
+        DispatchQueue.main.async {
+          cell.configureCell(text: description, image: image)
+        }
       }
     }
     return cell

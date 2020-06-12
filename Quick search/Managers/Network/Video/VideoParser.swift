@@ -29,5 +29,4 @@ class VideoParser: IParser {
     }
     return parseResult
   }
-  
 }

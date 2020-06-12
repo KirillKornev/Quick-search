@@ -8,20 +8,13 @@
 
 import UIKit
 
-enum Result<T> {
-  case success(T)
-  case failure(Error)
-}
-
 protocol RequstManagerProtocol {
-  func loadPicture(url: URL, completionHandler: @escaping (UIImage?, Error?) -> ())
-  func sendRequest<Parser>(config: RequestConfig<Parser>, completionHandler: @escaping (Result<Parser.Model>) -> Void) 
+  func sendRequest<Parser>(config: RequestConfig<Parser>, completionHandler: @escaping (Result<Parser.Model>) -> Void)
 }
 
 class RequstManager: RequstManagerProtocol {
   
   let sessionConfiguration = URLSessionConfiguration.ephemeral
-  
   lazy var session = URLSession.init(configuration: sessionConfiguration)
   
    func sendRequest<Parser>(config: RequestConfig<Parser>, completionHandler: @escaping (Result<Parser.Model>) -> Void)  {
@@ -32,17 +25,6 @@ class RequstManager: RequstManagerProtocol {
       }
       guard let data = data, let model: Parser.Model = config.parser.parse(data: data) else { return }
       completionHandler(.success(model))
-    }.resume()
-  }
-  
-  func loadPicture(url: URL, completionHandler: @escaping (UIImage?, Error?) -> ()) {
-    URLSession.shared.dataTask(with: url) { (data, response, error) in
-      if let error = error {
-        completionHandler(nil, error)
-      }
-      guard let data = data else { return }
-      let image = UIImage(data: data)
-      completionHandler(image, nil)
     }.resume()
   }
   

@@ -12,6 +12,10 @@ class PictureViewController: UIViewController {
   
   let check = CheckInternetConnection()
   
+  let fetchImageManager = FetchPicturesManager()
+  
+  var pictures = [ImageModel]()
+  
   let assembly: ControllerBuilderProtocol = ControllerBuilder()
 
   @IBOutlet weak var collectionView: UICollectionView!
@@ -33,7 +37,17 @@ class PictureViewController: UIViewController {
         }
       }
     }
+    getPictureList(number: 5, theme: "weather")
     }
+  
+  func getPictureList(number: Int, theme: String) {
+    fetchImageManager.fetchPicturesUrls(number: number, theme: theme) { (pictures) in
+      self.pictures = pictures
+      DispatchQueue.main.async {
+        self.collectionView.reloadData()
+      }
+    }
+  }
   
   private func setupCollectionView() {
     let nibCell = UINib(nibName: String(describing: PictureCell.self), bundle: nil)
@@ -57,20 +71,27 @@ class PictureViewController: UIViewController {
 extension PictureViewController: UICollectionViewDataSource, UICollectionViewDelegate {
   
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    return 10
+    return pictures.count
   }
   
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: PictureCell.self), for: indexPath) as? PictureCell else { return UICollectionViewCell()}
-//    cell.contentView.backgroundColor = .yellow
+    let url = pictures[indexPath.row].pathURL
+    cell.setDefaultImage()
+
+    fetchImageManager.loadPicture(url: url) { (image) in
+      guard let image = image else { return }
+      DispatchQueue.main.sync {
+        cell.configureCell(image: image)
+      }
+    }
     return cell
   }
-  
 }
 
 extension PictureViewController: SettingsViewDelegate {
   func sendInfo(number: Int, theme: String) {
-    //code
+    getPictureList(number: number, theme: theme)
   }
   
 }

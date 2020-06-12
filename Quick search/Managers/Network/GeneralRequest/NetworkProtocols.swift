@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 struct RequestConfig<Parser> where Parser: IParser {
   let request: URLRequest?
   let parser: Parser
@@ -17,4 +16,9 @@ struct RequestConfig<Parser> where Parser: IParser {
 protocol IParser {
   associatedtype Model
   func parse(data: Data) -> Model?
+}
+
+enum Result<T> {
+  case success(T)
+  case failure(Error)
 }
