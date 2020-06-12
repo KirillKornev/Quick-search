@@ -27,9 +27,8 @@ class SettingsViewController: UIViewController {
     delegate?.sendInfo(number: number, theme: theme)
     self.dismiss(animated: true, completion: nil)
   }
-  let numberArray = [5, 10, 15, 20, 25, 30]
-  let numberArray1 = ["5", "10", "15", "20", "25", "30"]
-  let themesArray = ["Nature", "Cars", "Sport", "Phones", "Food", "Weather"]
+  let numberArray = [5, 10, 15, 20, 25, 30, 40, 50, 70, 90, 100]
+  let themesArray = ["Nature", "Cars", "Sport", "Phones", "Food", "Weather", "Hi-Tech", "Abstraction", "Aviation", "City", "Girls", "Painting", "Animals", "Games", "Interior", "Space", "Cats", "Macro", "Machines", "Minimalism", "Men", "Music", "Moods", "Holidays", "Miscellaneous", "Rendering", "Situations", "Dogs", "Sport", "Style", "Textures", "Fiction", "Movies", "Flowers"]
   
   override func viewDidLoad() {
         super.viewDidLoad()
