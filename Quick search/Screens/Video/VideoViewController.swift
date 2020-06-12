@@ -11,11 +11,16 @@ import AVKit
 
 class VideoViewController: UIViewController {
   
+  var numberOfItems = 5
+  var theme = "Nature"
+  
   let check = CheckInternetConnection()
   
   var videos = [VideoModel]()
   
   let fetchManager: RequstManagerProtocol = RequstManager()
+  
+  let videoManager = FetchVideosManager()
   
   let assembly: ControllerBuilderProtocol = ControllerBuilder()
   
@@ -30,24 +35,27 @@ class VideoViewController: UIViewController {
       tableView.estimatedRowHeight = 400
       tableView.rowHeight = UITableView.automaticDimension
       createBarItems()
-      getVideoList()
+      getVideoList(number: 5, theme: "Weather")
       check.checkConnection { (result) in
         if result == false {
           DispatchQueue.main.async {
-            self.showFailurInternetConnectionAlert()
+            Alert.showFailurInternetConnectionAlert(on: self) {
+              print("try later")
+            }
           }
         }
       }
     }
   
-  func getVideoList() {
-    fetchManager.loadVideoList { (videoList, error) in
-      guard let unwrapVideos = videoList else { return }
-      self.videos = unwrapVideos
+  func getVideoList(number: Int, theme: String) {
+    videoManager.fetchVideosUrls(number: numberOfItems, theme: theme) { (videoList) in
+      self.videos = videoList
+      print("yeah")
       DispatchQueue.main.async {
         self.tableView.reloadData()
       }
     }
+    
   }
   
   func setupTableViewCell() {
@@ -103,12 +111,9 @@ extension VideoViewController: UITableViewDataSource, UITableViewDelegate {
 }
 
 extension VideoViewController: SettingsViewDelegate {
-  func sendNumberOfItems(number: String) {
-    print("picture VC get \(number)")
-  }
   
-  func sendTheme(theme: String) {
-    print("picture VC get \(theme)")
+  func sendInfo(number: Int, theme: String) {
+    getVideoList(number: 5, theme: theme)
   }
   
 }

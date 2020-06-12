@@ -10,7 +10,7 @@ import UIKit
 
 extension UIViewController {
   
-  func showFailurInternetConnectionAlert() {
+  func showFailurInternetConnectionAlert(completionHandler: @escaping ()->()) {
     let alert = UIAlertController(title: "No internet", message: "Try later", preferredStyle: .alert)
     let action = UIAlertAction(title: "OK", style: .default, handler: nil)
     alert.addAction(action)

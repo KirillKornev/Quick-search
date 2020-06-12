@@ -8,12 +8,34 @@
 
 import UIKit
 
+enum Result<T> {
+  case success(T)
+  case failure(Error)
+}
+
 protocol RequstManagerProtocol {
   func loadVideoList(completionHandler: @escaping ([VideoModel]?, Error?) -> ())
   func loadPicture(url: URL, completionHandler: @escaping (UIImage?, Error?) -> ())
+  func sendRequest<Parser>(config: RequestConfig<Parser>, completionHandler: @escaping (Result<Parser.Model>) -> Void) 
 }
 
 class RequstManager: RequstManagerProtocol {
+  
+  let sessionConfiguration = URLSessionConfiguration.ephemeral
+  lazy var session = URLSession.init(configuration: sessionConfiguration)
+  
+   func sendRequest<Parser>(config: RequestConfig<Parser>, completionHandler: @escaping (Result<Parser.Model>) -> Void)  {
+    guard let urlRequest = config.request else { return }
+    session.dataTask(with: urlRequest) { (data, response, error) in
+      if let error = error {
+        completionHandler(.failure(error))
+      }
+      guard let data = data, let model: Parser.Model = config.parser.parse(data: data) else { return }
+      completionHandler(.success(model))
+    }.resume()
+  }
+  
+  
   
   let link = "https://api.tenor.com/v1/search?q=car&key=3GUTCBEYYFEY&limit=2"
   

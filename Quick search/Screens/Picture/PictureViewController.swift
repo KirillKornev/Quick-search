@@ -10,6 +10,8 @@ import UIKit
 
 class PictureViewController: UIViewController {
   
+  let check = CheckInternetConnection()
+  
   let assembly: ControllerBuilderProtocol = ControllerBuilder()
 
   @IBOutlet weak var collectionView: UICollectionView!
@@ -22,6 +24,15 @@ class PictureViewController: UIViewController {
     collectionView.delegate = self
     setupCollectionView()
     createBarItems()
+    check.checkConnection { (result) in
+      if result == false {
+        DispatchQueue.main.async {
+          Alert.showFailurInternetConnectionAlert(on: self) {
+            print("try later")
+          }
+        }
+      }
+    }
     }
   
   private func setupCollectionView() {
@@ -58,12 +69,8 @@ extension PictureViewController: UICollectionViewDataSource, UICollectionViewDel
 }
 
 extension PictureViewController: SettingsViewDelegate {
-  func sendNumberOfItems(number: String) {
-    print("video VC get \(number)")
-  }
-  
-  func sendTheme(theme: String) {
-    print("video VC get \(theme)")
+  func sendInfo(number: Int, theme: String) {
+    //code
   }
   
 }

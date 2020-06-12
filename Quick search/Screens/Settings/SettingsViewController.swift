@@ -9,8 +9,7 @@
 import UIKit
 
 protocol SettingsViewDelegate {
-  func sendNumberOfItems(number: String)
-  func sendTheme(theme: String)
+  func sendInfo(number: Int, theme: String)
 }
 
 class SettingsViewController: UIViewController {
@@ -25,11 +24,10 @@ class SettingsViewController: UIViewController {
   lazy var theme = themesArray[0]
   
   @IBAction func saveButton(_ sender: UIButton) {
-    delegate?.sendTheme(theme: theme)
-    delegate?.sendNumberOfItems(number: number)
+    delegate?.sendInfo(number: number, theme: theme)
   }
-  
-  let numberArray = ["5", "10", "15", "20", "25", "30"]
+  let numberArray = [5, 10, 15, 20, 25, 30]
+  let numberArray1 = ["5", "10", "15", "20", "25", "30"]
   let themesArray = ["Nature", "Cars", "Sport", "Phones", "Food", "Weather"]
   
   override func viewDidLoad() {
@@ -44,13 +42,11 @@ class SettingsViewController: UIViewController {
     themeLabel.text = "Theme:"
   }
   
-  private func setPictureCount(count: String) {
-    numberOfPicturesLabel.text = "Number of pictures: \(count)"
+  private func setPictureCount(count: Int) {
     self.number = count
   }
   
   private func setTheme(theme: String) {
-    themeLabel.text = "Theme: \(theme)"
     self.theme = theme
   }
 
@@ -75,7 +71,7 @@ extension SettingsViewController: UIPickerViewDataSource, UIPickerViewDelegate{
   
   func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
     if component == 0 {
-      return numberArray[row]
+      return String(numberArray[row])
     } else {
       return themesArray[row]
     }
