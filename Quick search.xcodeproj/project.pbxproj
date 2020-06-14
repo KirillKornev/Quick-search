@@ -36,7 +36,6 @@
 		ED1351D42496C4480097A3E3 /* InternetSearchingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED1351D22496C4480097A3E3 /* InternetSearchingViewController.xib */; };
 		EDC3F11A24910848006CA194 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC3F11924910848006CA194 /* AppDelegate.swift */; };
 		EDC3F11C24910848006CA194 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC3F11B24910848006CA194 /* SceneDelegate.swift */; };
-		EDC3F12124910848006CA194 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDC3F11F24910848006CA194 /* Main.storyboard */; };
 		EDC3F1232491084C006CA194 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDC3F1222491084C006CA194 /* Assets.xcassets */; };
 		EDC3F1262491084C006CA194 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDC3F1242491084C006CA194 /* LaunchScreen.storyboard */; };
 		EDC3F1C624927541006CA194 /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC3F1C424927541006CA194 /* VideoViewController.swift */; };
@@ -80,7 +79,6 @@
 		EDC3F11624910848006CA194 /* Quick search.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Quick search.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDC3F11924910848006CA194 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EDC3F11B24910848006CA194 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		EDC3F12024910848006CA194 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EDC3F1222491084C006CA194 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EDC3F1252491084C006CA194 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EDC3F1272491084C006CA194 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -255,7 +253,6 @@
 				EDC3F1C82492754E006CA194 /* Screens */,
 				ED1351902492B5CC0097A3E3 /* Managers */,
 				ED1351972492B7CB0097A3E3 /* Support */,
-				EDC3F11F24910848006CA194 /* Main.storyboard */,
 				EDC3F1222491084C006CA194 /* Assets.xcassets */,
 				EDC3F1242491084C006CA194 /* LaunchScreen.storyboard */,
 				EDC3F1272491084C006CA194 /* Info.plist */,
@@ -372,7 +369,6 @@
 				EDC3F1F7249284BE006CA194 /* VideoCell.xib in Resources */,
 				EDC3F1C724927541006CA194 /* VideoViewController.xib in Resources */,
 				ED1351CE2496BAD40097A3E3 /* ChooseViewController.xib in Resources */,
-				EDC3F12124910848006CA194 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -419,14 +415,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		EDC3F11F24910848006CA194 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				EDC3F12024910848006CA194 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		EDC3F1242491084C006CA194 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
