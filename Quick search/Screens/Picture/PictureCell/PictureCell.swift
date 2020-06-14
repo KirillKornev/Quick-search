@@ -15,7 +15,8 @@ class PictureCell: UICollectionViewCell {
     
     super.awakeFromNib()
     setDefaultImage()
-    pictureImage.contentMode = .scaleToFill
+    pictureImage.contentMode = .scaleAspectFill
+    pictureImage.layer.cornerRadius = 0.05 * contentView.frame.width
   }
   
   func setDefaultImage() {
@@ -24,7 +25,6 @@ class PictureCell: UICollectionViewCell {
   }
   
   func configureCell(image: UIImage) {
-    print("configure cell")
     pictureImage.image = image
     
   }

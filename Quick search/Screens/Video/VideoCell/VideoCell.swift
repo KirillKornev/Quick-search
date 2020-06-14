@@ -16,13 +16,13 @@ class VideoCell: UITableViewCell {
   override func awakeFromNib() {
         super.awakeFromNib()
     setDefaultImage()
-    
+    videoImage.contentMode = .scaleAspectFill
+    videoImage.layer.cornerRadius = 0.02 * contentView.frame.width
     }
   
   private func setDefaultImage() {
     guard let image = UIImage(named: IconPath.placeholderPicture) else { return }
     videoImage.image = image
-    videoImage.contentMode = .scaleToFill
   }
   
   func deletePicture() {
