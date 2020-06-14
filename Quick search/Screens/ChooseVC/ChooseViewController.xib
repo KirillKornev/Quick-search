@@ -19,63 +19,52 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Search:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="adz-g3-cqn">
-                    <rect key="frame" x="162" y="115" width="90.5" height="26.5"/>
-                    <fontDescription key="fontDescription" name="Georgia-Bold" family="Georgia" pointSize="23"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Videos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sOP-tN-Kzm">
-                    <rect key="frame" x="20" y="304" width="69" height="27"/>
-                    <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="23"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8oL-ch-F9A">
-                    <rect key="frame" x="143" y="172.5" width="50" height="50"/>
-                    <constraints>
-                        <constraint firstAttribute="width" secondItem="8oL-ch-F9A" secondAttribute="height" multiplier="1:1" id="kz6-sf-qX5"/>
-                        <constraint firstAttribute="width" constant="50" id="qXD-yd-Lxk"/>
-                    </constraints>
-                    <state key="normal" title="picture"/>
-                    <connections>
-                        <action selector="goToPicture:" destination="-1" eventType="touchUpInside" id="yP1-H6-XI2"/>
-                    </connections>
-                </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pictures" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0FN-cU-YFA">
-                    <rect key="frame" x="20" y="184" width="83" height="27"/>
-                    <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="23"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zgv-qu-1H7">
-                    <rect key="frame" x="129" y="292.5" width="50" height="50"/>
-                    <constraints>
-                        <constraint firstAttribute="width" secondItem="Zgv-qu-1H7" secondAttribute="height" multiplier="1:1" id="Ao7-iU-DIU"/>
-                        <constraint firstAttribute="height" constant="50" id="t6J-nd-Se2"/>
-                    </constraints>
-                    <state key="normal" title="Video"/>
-                    <connections>
-                        <action selector="goToVideo:" destination="-1" eventType="touchUpInside" id="kN0-xA-Mjb"/>
-                    </connections>
-                </button>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="f8C-xS-fC7">
+                    <rect key="frame" x="0.0" y="328" width="414" height="240"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose action" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GdN-1X-ZLe">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="40"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="252" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zgv-qu-1H7">
+                            <rect key="frame" x="0.0" y="40" width="414" height="100"/>
+                            <color key="backgroundColor" red="0.55954296620903454" green="0.67159667671893719" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="100" id="KmQ-jM-VOB"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="30"/>
+                            <state key="normal" title="Video">
+                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="goToVideo:" destination="-1" eventType="touchUpInside" id="kN0-xA-Mjb"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8oL-ch-F9A">
+                            <rect key="frame" x="0.0" y="140" width="414" height="100"/>
+                            <color key="backgroundColor" red="0.59705575359407714" green="0.92472702264785767" blue="0.52956082106721558" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="30"/>
+                            <state key="normal" title="Picture">
+                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="goToPicture:" destination="-1" eventType="touchUpInside" id="yP1-H6-XI2"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                </stackView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="adz-g3-cqn" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="1Mz-FA-2e4"/>
-                <constraint firstItem="adz-g3-cqn" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="71" id="5JX-IT-zwg"/>
-                <constraint firstItem="Zgv-qu-1H7" firstAttribute="centerY" secondItem="sOP-tN-Kzm" secondAttribute="centerY" id="BdO-be-KRU"/>
-                <constraint firstItem="sOP-tN-Kzm" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="CNq-cc-mdA"/>
-                <constraint firstItem="8oL-ch-F9A" firstAttribute="centerY" secondItem="0FN-cU-YFA" secondAttribute="centerY" id="JtU-o4-t2d"/>
-                <constraint firstItem="Zgv-qu-1H7" firstAttribute="leading" secondItem="sOP-tN-Kzm" secondAttribute="trailing" constant="40" id="OwQ-WR-wCn"/>
-                <constraint firstItem="0FN-cU-YFA" firstAttribute="top" secondItem="adz-g3-cqn" secondAttribute="bottom" constant="42.5" id="RQ1-u9-S1M"/>
-                <constraint firstItem="sOP-tN-Kzm" firstAttribute="top" secondItem="0FN-cU-YFA" secondAttribute="bottom" constant="93" id="XHB-XC-7cK"/>
-                <constraint firstItem="0FN-cU-YFA" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="aPj-fO-AEx"/>
-                <constraint firstItem="8oL-ch-F9A" firstAttribute="leading" secondItem="0FN-cU-YFA" secondAttribute="trailing" constant="40" id="dWC-PF-EiR"/>
-                <constraint firstItem="sOP-tN-Kzm" firstAttribute="leading" secondItem="0FN-cU-YFA" secondAttribute="leading" id="o8Q-IG-fRk"/>
+                <constraint firstItem="f8C-xS-fC7" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="7Lt-Xa-xy0"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="f8C-xS-fC7" secondAttribute="trailing" id="9ua-u5-gq1"/>
+                <constraint firstItem="f8C-xS-fC7" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="EVh-0j-iSj"/>
+                <constraint firstItem="f8C-xS-fC7" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="uoU-Di-wWu"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <point key="canvasLocation" x="139" y="116"/>
+            <point key="canvasLocation" x="137.68115942028987" y="115.84821428571428"/>
         </view>
     </objects>
 </document>
