@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ChooseViewController" customModule="Quick_search" customModuleProvider="target">
+            <connections>
+                <outlet property="goToPictureButton" destination="8oL-ch-F9A" id="V0c-i1-sT1"/>
+                <outlet property="goToVideoButton" destination="Zgv-qu-1H7" id="9Qq-bM-QAk"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Search:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="adz-g3-cqn">
+                    <rect key="frame" x="162" y="115" width="90.5" height="26.5"/>
+                    <fontDescription key="fontDescription" name="Georgia-Bold" family="Georgia" pointSize="23"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Videos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sOP-tN-Kzm">
+                    <rect key="frame" x="20" y="304" width="69" height="27"/>
+                    <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="23"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8oL-ch-F9A">
+                    <rect key="frame" x="143" y="172.5" width="50" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="8oL-ch-F9A" secondAttribute="height" multiplier="1:1" id="kz6-sf-qX5"/>
+                        <constraint firstAttribute="width" constant="50" id="qXD-yd-Lxk"/>
+                    </constraints>
+                    <state key="normal" title="picture"/>
+                    <connections>
+                        <action selector="goToPicture:" destination="-1" eventType="touchUpInside" id="yP1-H6-XI2"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pictures" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0FN-cU-YFA">
+                    <rect key="frame" x="20" y="184" width="83" height="27"/>
+                    <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="23"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zgv-qu-1H7">
+                    <rect key="frame" x="129" y="292.5" width="50" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="Zgv-qu-1H7" secondAttribute="height" multiplier="1:1" id="Ao7-iU-DIU"/>
+                        <constraint firstAttribute="height" constant="50" id="t6J-nd-Se2"/>
+                    </constraints>
+                    <state key="normal" title="Video"/>
+                    <connections>
+                        <action selector="goToVideo:" destination="-1" eventType="touchUpInside" id="kN0-xA-Mjb"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="adz-g3-cqn" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="1Mz-FA-2e4"/>
+                <constraint firstItem="adz-g3-cqn" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="71" id="5JX-IT-zwg"/>
+                <constraint firstItem="Zgv-qu-1H7" firstAttribute="centerY" secondItem="sOP-tN-Kzm" secondAttribute="centerY" id="BdO-be-KRU"/>
+                <constraint firstItem="sOP-tN-Kzm" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="CNq-cc-mdA"/>
+                <constraint firstItem="8oL-ch-F9A" firstAttribute="centerY" secondItem="0FN-cU-YFA" secondAttribute="centerY" id="JtU-o4-t2d"/>
+                <constraint firstItem="Zgv-qu-1H7" firstAttribute="leading" secondItem="sOP-tN-Kzm" secondAttribute="trailing" constant="40" id="OwQ-WR-wCn"/>
+                <constraint firstItem="0FN-cU-YFA" firstAttribute="top" secondItem="adz-g3-cqn" secondAttribute="bottom" constant="42.5" id="RQ1-u9-S1M"/>
+                <constraint firstItem="sOP-tN-Kzm" firstAttribute="top" secondItem="0FN-cU-YFA" secondAttribute="bottom" constant="93" id="XHB-XC-7cK"/>
+                <constraint firstItem="0FN-cU-YFA" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="aPj-fO-AEx"/>
+                <constraint firstItem="8oL-ch-F9A" firstAttribute="leading" secondItem="0FN-cU-YFA" secondAttribute="trailing" constant="40" id="dWC-PF-EiR"/>
+                <constraint firstItem="sOP-tN-Kzm" firstAttribute="leading" secondItem="0FN-cU-YFA" secondAttribute="leading" id="o8Q-IG-fRk"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="139" y="116"/>
+        </view>
+    </objects>
+</document>

@@ -37,7 +37,7 @@ class PictureViewController: UIViewController {
         }
       }
     }
-    getPictureList(number: 5, theme: "weather")
+    getPictureList(number: 5, theme: "Nature")
     }
   
   func getPictureList(number: Int, theme: String) {

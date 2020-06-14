@@ -17,7 +17,6 @@ class CheckInternetConnection {
   func checkConnection(completionHandler: @escaping (Bool) -> Void)  {
     monitor.pathUpdateHandler = { path in
       if path.status == .satisfied {
-        print("connection sucseed")
         completionHandler(true)
       } else {
         print("no connection")

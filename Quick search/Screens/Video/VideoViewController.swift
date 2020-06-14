@@ -35,7 +35,7 @@ class VideoViewController: UIViewController {
       tableView.estimatedRowHeight = 400
       tableView.rowHeight = UITableView.automaticDimension
       createBarItems()
-      getVideoList(number: 5, theme: "Weather")
+      getVideoList(number: 5, theme: "Nature")
       check.checkConnection { (result) in
         if result == false {
           DispatchQueue.main.async {

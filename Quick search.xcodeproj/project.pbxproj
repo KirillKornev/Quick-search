@@ -30,9 +30,12 @@
 		ED1351C42494096B0097A3E3 /* PictureParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1351C32494096B0097A3E3 /* PictureParser.swift */; };
 		ED1351C82496B16A0097A3E3 /* GeneralPictureRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1351C72496B1690097A3E3 /* GeneralPictureRequest.swift */; };
 		ED1351CA2496B4C50097A3E3 /* IconPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1351C92496B4C50097A3E3 /* IconPath.swift */; };
+		ED1351CD2496BAD30097A3E3 /* ChooseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1351CB2496BAD30097A3E3 /* ChooseViewController.swift */; };
+		ED1351CE2496BAD40097A3E3 /* ChooseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED1351CC2496BAD30097A3E3 /* ChooseViewController.xib */; };
+		ED1351D32496C4480097A3E3 /* InternetSearchingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1351D12496C4480097A3E3 /* InternetSearchingViewController.swift */; };
+		ED1351D42496C4480097A3E3 /* InternetSearchingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED1351D22496C4480097A3E3 /* InternetSearchingViewController.xib */; };
 		EDC3F11A24910848006CA194 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC3F11924910848006CA194 /* AppDelegate.swift */; };
 		EDC3F11C24910848006CA194 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC3F11B24910848006CA194 /* SceneDelegate.swift */; };
-		EDC3F11E24910848006CA194 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC3F11D24910848006CA194 /* ViewController.swift */; };
 		EDC3F12124910848006CA194 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDC3F11F24910848006CA194 /* Main.storyboard */; };
 		EDC3F1232491084C006CA194 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDC3F1222491084C006CA194 /* Assets.xcassets */; };
 		EDC3F1262491084C006CA194 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDC3F1242491084C006CA194 /* LaunchScreen.storyboard */; };
@@ -70,10 +73,13 @@
 		ED1351C32494096B0097A3E3 /* PictureParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureParser.swift; sourceTree = "<group>"; };
 		ED1351C72496B1690097A3E3 /* GeneralPictureRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralPictureRequest.swift; sourceTree = "<group>"; };
 		ED1351C92496B4C50097A3E3 /* IconPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconPath.swift; sourceTree = "<group>"; };
+		ED1351CB2496BAD30097A3E3 /* ChooseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseViewController.swift; sourceTree = "<group>"; };
+		ED1351CC2496BAD30097A3E3 /* ChooseViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChooseViewController.xib; sourceTree = "<group>"; };
+		ED1351D12496C4480097A3E3 /* InternetSearchingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternetSearchingViewController.swift; sourceTree = "<group>"; };
+		ED1351D22496C4480097A3E3 /* InternetSearchingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InternetSearchingViewController.xib; sourceTree = "<group>"; };
 		EDC3F11624910848006CA194 /* Quick search.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Quick search.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDC3F11924910848006CA194 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EDC3F11B24910848006CA194 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		EDC3F11D24910848006CA194 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		EDC3F12024910848006CA194 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EDC3F1222491084C006CA194 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EDC3F1252491084C006CA194 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -206,6 +212,24 @@
 			path = ParseModel;
 			sourceTree = "<group>";
 		};
+		ED1351CF2496BADB0097A3E3 /* ChooseVC */ = {
+			isa = PBXGroup;
+			children = (
+				ED1351CB2496BAD30097A3E3 /* ChooseViewController.swift */,
+				ED1351CC2496BAD30097A3E3 /* ChooseViewController.xib */,
+			);
+			path = ChooseVC;
+			sourceTree = "<group>";
+		};
+		ED1351D02496C4230097A3E3 /* InternetSearching */ = {
+			isa = PBXGroup;
+			children = (
+				ED1351D12496C4480097A3E3 /* InternetSearchingViewController.swift */,
+				ED1351D22496C4480097A3E3 /* InternetSearchingViewController.xib */,
+			);
+			path = InternetSearching;
+			sourceTree = "<group>";
+		};
 		EDC3F10D24910848006CA194 = {
 			isa = PBXGroup;
 			children = (
@@ -243,8 +267,9 @@
 			isa = PBXGroup;
 			children = (
 				EDC3F1CC249275F7006CA194 /* TabBarController.swift */,
+				ED1351D02496C4230097A3E3 /* InternetSearching */,
+				ED1351CF2496BADB0097A3E3 /* ChooseVC */,
 				ED13518A249296A10097A3E3 /* Settings */,
-				EDC3F1CB2492757E006CA194 /* Search */,
 				EDC3F1CA24927573006CA194 /* Picture */,
 				EDC3F1C92492755F006CA194 /* Video */,
 			);
@@ -269,14 +294,6 @@
 				ED13517E2492925F0097A3E3 /* PictureCell */,
 			);
 			path = Picture;
-			sourceTree = "<group>";
-		};
-		EDC3F1CB2492757E006CA194 /* Search */ = {
-			isa = PBXGroup;
-			children = (
-				EDC3F11D24910848006CA194 /* ViewController.swift */,
-			);
-			path = Search;
 			sourceTree = "<group>";
 		};
 		EDC3F1F8249284C5006CA194 /* VideoCell */ = {
@@ -348,11 +365,13 @@
 			files = (
 				ED1351822492927D0097A3E3 /* PictureCell.xib in Resources */,
 				EDC3F1262491084C006CA194 /* LaunchScreen.storyboard in Resources */,
+				ED1351D42496C4480097A3E3 /* InternetSearchingViewController.xib in Resources */,
 				ED13518E249296C00097A3E3 /* SettingsViewController.xib in Resources */,
 				EDC3F1F124927DED006CA194 /* PictureViewController.xib in Resources */,
 				EDC3F1232491084C006CA194 /* Assets.xcassets in Resources */,
 				EDC3F1F7249284BE006CA194 /* VideoCell.xib in Resources */,
 				EDC3F1C724927541006CA194 /* VideoViewController.xib in Resources */,
+				ED1351CE2496BAD40097A3E3 /* ChooseViewController.xib in Resources */,
 				EDC3F12124910848006CA194 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -366,7 +385,6 @@
 			files = (
 				ED1351BA249406320097A3E3 /* RequestFactory.swift in Sources */,
 				ED1351AD2493E7FB0097A3E3 /* FetchVideosManager.swift in Sources */,
-				EDC3F11E24910848006CA194 /* ViewController.swift in Sources */,
 				EDC3F1F6249284BE006CA194 /* VideoCell.swift in Sources */,
 				ED1351A72492E3560097A3E3 /* UIViewController+extension.swift in Sources */,
 				ED1351C82496B16A0097A3E3 /* GeneralPictureRequest.swift in Sources */,
@@ -378,6 +396,7 @@
 				EDC3F1F024927DED006CA194 /* PictureViewController.swift in Sources */,
 				EDC3F11A24910848006CA194 /* AppDelegate.swift in Sources */,
 				ED1351812492927D0097A3E3 /* PictureCell.swift in Sources */,
+				ED1351D32496C4480097A3E3 /* InternetSearchingViewController.swift in Sources */,
 				ED1351C22494086E0097A3E3 /* PictureRequest.swift in Sources */,
 				EDC3F1C624927541006CA194 /* VideoViewController.swift in Sources */,
 				ED135184249293D60097A3E3 /* FlowLayout.swift in Sources */,
@@ -387,6 +406,7 @@
 				ED1351B3249405000097A3E3 /* VideoParseModel.swift in Sources */,
 				ED13519C2492C7C20097A3E3 /* VideoPlayer.swift in Sources */,
 				EDC3F1CD249275F7006CA194 /* TabBarController.swift in Sources */,
+				ED1351CD2496BAD30097A3E3 /* ChooseViewController.swift in Sources */,
 				ED1351A52492E0BB0097A3E3 /* CheckInternetConnection.swift in Sources */,
 				ED1351AB2493D9C80097A3E3 /* VideoRequest.swift in Sources */,
 				ED1351962492B64A0097A3E3 /* ImageParseModel.swift in Sources */,

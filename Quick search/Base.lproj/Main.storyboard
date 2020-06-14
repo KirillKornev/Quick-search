@@ -1,75 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
-            <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Quick_search" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X3T-Ra-K7y">
-                                <rect key="frame" x="0.0" y="124" width="414" height="738"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <wkWebViewConfiguration key="configuration">
-                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
-                                    <wkPreferences key="preferences"/>
-                                </wkWebViewConfiguration>
-                            </wkWebView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nyE-E4-qnC">
-                                <rect key="frame" x="20" y="62" width="374" height="34"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="34" id="8XR-HU-Ngg"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="URL"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hod-nk-mKe">
-                                <rect key="frame" x="20" y="104" width="30" height="30"/>
-                                <state key="normal" title="&lt;"/>
-                                <connections>
-                                    <action selector="goBack:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pel-fX-kqy"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aF4-BX-b0N">
-                                <rect key="frame" x="364" y="104" width="30" height="30"/>
-                                <state key="normal" title="&gt;"/>
-                                <connections>
-                                    <action selector="goForward:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nt3-hv-HzX"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstItem="X3T-Ra-K7y" firstAttribute="top" secondItem="nyE-E4-qnC" secondAttribute="bottom" constant="28" id="5g4-pa-03p"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="X3T-Ra-K7y" secondAttribute="bottom" id="6D0-La-sJ0"/>
-                            <constraint firstItem="aF4-BX-b0N" firstAttribute="top" secondItem="nyE-E4-qnC" secondAttribute="bottom" constant="8" id="F16-Vl-sRv"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="nyE-E4-qnC" secondAttribute="trailing" constant="20" id="Jqm-6a-uG8"/>
-                            <constraint firstItem="aF4-BX-b0N" firstAttribute="trailing" secondItem="nyE-E4-qnC" secondAttribute="trailing" id="KFB-Lf-1aD"/>
-                            <constraint firstItem="X3T-Ra-K7y" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Kdk-xY-hSR"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="X3T-Ra-K7y" secondAttribute="trailing" id="YBi-g8-S1g"/>
-                            <constraint firstItem="Hod-nk-mKe" firstAttribute="leading" secondItem="nyE-E4-qnC" secondAttribute="leading" id="dlr-R9-L23"/>
-                            <constraint firstItem="nyE-E4-qnC" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="18" id="jRy-uI-Bqr"/>
-                            <constraint firstItem="nyE-E4-qnC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="ncQ-36-JpB"/>
-                            <constraint firstItem="Hod-nk-mKe" firstAttribute="top" secondItem="nyE-E4-qnC" secondAttribute="bottom" constant="8" id="r8X-ae-mqE"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                    </view>
-                    <connections>
-                        <outlet property="searchTextField" destination="nyE-E4-qnC" id="gbc-yH-J1Z"/>
-                        <outlet property="searchWebView" destination="X3T-Ra-K7y" id="Jrd-WO-gwL"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="131.8840579710145" y="103.79464285714285"/>
-        </scene>
-    </scenes>
+    <scenes/>
 </document>
