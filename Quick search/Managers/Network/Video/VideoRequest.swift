@@ -32,12 +32,6 @@ class VideoRequest {
   }
 }
 
-class PictureGeneralRequest {
-  var urlRequest: URLRequest?
-  init(url: URL) {
-    urlRequest = URLRequest(url: url)
-  }
-}
 
 
 

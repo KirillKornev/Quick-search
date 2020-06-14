@@ -29,6 +29,7 @@
 		ED1351C0249407D90097A3E3 /* FetchPicturesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1351BF249407D90097A3E3 /* FetchPicturesManager.swift */; };
 		ED1351C22494086E0097A3E3 /* PictureRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1351C12494086E0097A3E3 /* PictureRequest.swift */; };
 		ED1351C42494096B0097A3E3 /* PictureParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1351C32494096B0097A3E3 /* PictureParser.swift */; };
+		ED1351C82496B16A0097A3E3 /* GeneralPictureRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1351C72496B1690097A3E3 /* GeneralPictureRequest.swift */; };
 		EDC3F11A24910848006CA194 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC3F11924910848006CA194 /* AppDelegate.swift */; };
 		EDC3F11C24910848006CA194 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC3F11B24910848006CA194 /* SceneDelegate.swift */; };
 		EDC3F11E24910848006CA194 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC3F11D24910848006CA194 /* ViewController.swift */; };
@@ -68,6 +69,7 @@
 		ED1351BF249407D90097A3E3 /* FetchPicturesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchPicturesManager.swift; sourceTree = "<group>"; };
 		ED1351C12494086E0097A3E3 /* PictureRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureRequest.swift; sourceTree = "<group>"; };
 		ED1351C32494096B0097A3E3 /* PictureParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureParser.swift; sourceTree = "<group>"; };
+		ED1351C72496B1690097A3E3 /* GeneralPictureRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralPictureRequest.swift; sourceTree = "<group>"; };
 		EDC3F11624910848006CA194 /* Quick search.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Quick search.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDC3F11924910848006CA194 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EDC3F11B24910848006CA194 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -140,6 +142,8 @@
 				ED1351982492B7DB0097A3E3 /* Models */,
 				ED1351A62492E3560097A3E3 /* UIViewController+extension.swift */,
 				ED1351A82493D28A0097A3E3 /* Alert.swift */,
+				ED1351A42492E0BB0097A3E3 /* CheckInternetConnection.swift */,
+				ED13519B2492C7C20097A3E3 /* VideoPlayer.swift */,
 			);
 			path = Support;
 			sourceTree = "<group>";
@@ -158,6 +162,7 @@
 				ED1351922492B6210097A3E3 /* RequestManager.swift */,
 				ED1351B9249406320097A3E3 /* RequestFactory.swift */,
 				ED1351B5249405990097A3E3 /* NetworkProtocols.swift */,
+				ED1351C72496B1690097A3E3 /* GeneralPictureRequest.swift */,
 			);
 			path = GeneralRequest;
 			sourceTree = "<group>";
@@ -222,8 +227,6 @@
 				EDC3F11924910848006CA194 /* AppDelegate.swift */,
 				EDC3F11B24910848006CA194 /* SceneDelegate.swift */,
 				EDC3F1F224927F3A006CA194 /* ControllerBuilder.swift */,
-				ED13519B2492C7C20097A3E3 /* VideoPlayer.swift */,
-				ED1351A42492E0BB0097A3E3 /* CheckInternetConnection.swift */,
 				EDC3F1C82492754E006CA194 /* Screens */,
 				ED1351902492B5CC0097A3E3 /* Managers */,
 				ED1351972492B7CB0097A3E3 /* Support */,
@@ -366,6 +369,7 @@
 				EDC3F11E24910848006CA194 /* ViewController.swift in Sources */,
 				EDC3F1F6249284BE006CA194 /* VideoCell.swift in Sources */,
 				ED1351A72492E3560097A3E3 /* UIViewController+extension.swift in Sources */,
+				ED1351C82496B16A0097A3E3 /* GeneralPictureRequest.swift in Sources */,
 				ED1351C0249407D90097A3E3 /* FetchPicturesManager.swift in Sources */,
 				EDC3F1F324927F3A006CA194 /* ControllerBuilder.swift in Sources */,
 				ED13519A2492B7EB0097A3E3 /* VideoModel.swift in Sources */,
