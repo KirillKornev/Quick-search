@@ -39,6 +39,7 @@ class InternetSearchingViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+//    title = "Web searching" 
     searchTextField.placeholder = "https://"
     searchTextField.delegate = self
   }

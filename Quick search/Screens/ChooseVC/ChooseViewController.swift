@@ -27,7 +27,6 @@ class ChooseViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    title = "Choose action" 
     guard let videoImage = UIImage(named: IconPath.videoBarIcon) else { return }
     guard let pictureImage = UIImage(named: IconPath.pictureBarIcon) else { return }
     goToPictureButton.setImage(pictureImage, for: .normal)

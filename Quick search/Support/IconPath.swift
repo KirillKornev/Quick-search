@@ -13,4 +13,5 @@ struct IconPath {
   static let pictureBarIcon = "pictureIcon"
   static let videoBarIcon = "videoIcon"
   static let placeholderPicture = "placeholder"
+  static let searchIcon = "searchIcon"
 }
