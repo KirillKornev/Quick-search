@@ -20,7 +20,7 @@ class VideoCell: UITableViewCell {
     }
   
   private func setDefaultImage() {
-    guard let image = UIImage(named: "placeholder") else { return }
+    guard let image = UIImage(named: IconPath.placeholderPicture) else { return }
     videoImage.image = image
     videoImage.contentMode = .scaleToFill
   }

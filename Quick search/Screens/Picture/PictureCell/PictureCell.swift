@@ -19,7 +19,7 @@ class PictureCell: UICollectionViewCell {
   }
   
   func setDefaultImage() {
-    guard let image = UIImage(named: "placeholder") else { return }
+    guard let image = UIImage(named: IconPath.placeholderPicture) else { return }
     pictureImage.image = image
   }
   

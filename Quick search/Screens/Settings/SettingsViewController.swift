@@ -34,20 +34,22 @@ class SettingsViewController: UIViewController {
         super.viewDidLoad()
     numberOfPicturesPicker.dataSource = self
     numberOfPicturesPicker.delegate = self
-    setDefaultValues()
+    setDefaultValues(with: number, text: theme)
     }
   
-  private func setDefaultValues() {
-    numberOfPicturesLabel.text = "Number of pictures:"
-    themeLabel.text = "Theme:"
+  private func setDefaultValues(with number: Int, text: String) {
+    numberOfPicturesLabel.text = "Number of pictures: \(number)"
+    themeLabel.text = "Theme: \(theme)"
   }
   
   private func setPictureCount(count: Int) {
     self.number = count
+    setDefaultValues(with: number, text: theme)
   }
   
   private func setTheme(theme: String) {
     self.theme = theme
+    setDefaultValues(with: number, text: theme)
   }
 
 }

@@ -20,8 +20,8 @@ class TabBarController: UITabBarController {
     }
     
   private func setupBar() {
-    let image1 = UIImage(named: "pictureIcon")
-    let image2 = UIImage(named: "videoIcon")
+    let image1 = UIImage(named: IconPath.pictureBarIcon)
+    let image2 = UIImage(named: IconPath.videoBarIcon)
     let videoNavController = createNavController(vc: assembly.getVideoController(), icon: image1!)
     let pictureNavController = createNavController(vc: assembly.getPictureController(), icon: image2!)
     viewControllers = [videoNavController, pictureNavController]
