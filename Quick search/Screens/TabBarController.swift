@@ -20,11 +20,13 @@ class TabBarController: UITabBarController {
     }
     
   private func setupBar() {
-    let image1 = UIImage(named: "pictureIcon")
-    let image2 = UIImage(named: "videoIcon")
-    let videoNavController = createNavController(vc: assembly.getVideoController(), icon: image1!)
-    let pictureNavController = createNavController(vc: assembly.getPictureController(), icon: image2!)
-    viewControllers = [videoNavController, pictureNavController]
+    guard let image1 = UIImage(named: IconPath.pictureBarIcon) else { return }
+    guard let image2 = UIImage(named: IconPath.searchIcon) else { return }
+    let mediaController = createNavController(vc: assembly.getChooseController(), icon: image1)
+    let searchController = createNavController(vc: assembly.getInternetSearchingController(), icon: image2)
+    mediaController.title = "Choose actions"
+    searchController.title = "Web searching"
+    viewControllers = [mediaController, searchController]
     
     guard let items = tabBar.items else { return }
     for item in items {

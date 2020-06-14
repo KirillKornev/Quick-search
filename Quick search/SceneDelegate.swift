@@ -17,7 +17,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     guard let windowScene = (scene as? UIWindowScene) else { return }
     window = UIWindow(frame: windowScene.coordinateSpace.bounds)
     window?.windowScene = windowScene
-//    let settings = SettingsViewController()
     let controller = TabBarController()
     window?.rootViewController = controller
     window?.makeKeyAndVisible()

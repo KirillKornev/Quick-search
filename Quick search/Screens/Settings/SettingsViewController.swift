@@ -9,8 +9,7 @@
 import UIKit
 
 protocol SettingsViewDelegate {
-  func sendNumberOfItems(number: String)
-  func sendTheme(theme: String)
+  func sendInfo(number: Int, theme: String)
 }
 
 class SettingsViewController: UIViewController {
@@ -25,33 +24,32 @@ class SettingsViewController: UIViewController {
   lazy var theme = themesArray[0]
   
   @IBAction func saveButton(_ sender: UIButton) {
-    delegate?.sendTheme(theme: theme)
-    delegate?.sendNumberOfItems(number: number)
+    delegate?.sendInfo(number: number, theme: theme)
+    self.dismiss(animated: true, completion: nil)
   }
-  
-  let numberArray = ["5", "10", "15", "20", "25", "30"]
-  let themesArray = ["Nature", "Cars", "Sport", "Phones", "Food", "Weather"]
+  let numberArray = [5, 10, 15, 20, 25, 30, 40, 50, 70, 90, 100]
+  let themesArray = ["Nature", "Cars", "Sport", "Phones", "Food", "Weather", "Hi-Tech", "Abstraction", "Aviation", "City", "Girls", "Painting", "Animals", "Games", "Interior", "Space", "Cats", "Macro", "Machines", "Minimalism", "Men", "Music", "Moods", "Holidays", "Miscellaneous", "Rendering", "Situations", "Dogs", "Sport", "Style", "Textures", "Fiction", "Movies", "Flowers"]
   
   override func viewDidLoad() {
         super.viewDidLoad()
     numberOfPicturesPicker.dataSource = self
     numberOfPicturesPicker.delegate = self
-    setDefaultValues()
+    setDefaultValues(with: number, text: theme)
     }
   
-  private func setDefaultValues() {
-    numberOfPicturesLabel.text = "Number of pictures:"
-    themeLabel.text = "Theme:"
+  private func setDefaultValues(with number: Int, text: String) {
+    numberOfPicturesLabel.text = "Number of pictures: \(number)"
+    themeLabel.text = "Theme: \(theme)"
   }
   
-  private func setPictureCount(count: String) {
-    numberOfPicturesLabel.text = "Number of pictures: \(count)"
+  private func setPictureCount(count: Int) {
     self.number = count
+    setDefaultValues(with: number, text: theme)
   }
   
   private func setTheme(theme: String) {
-    themeLabel.text = "Theme: \(theme)"
     self.theme = theme
+    setDefaultValues(with: number, text: theme)
   }
 
 }
@@ -75,7 +73,7 @@ extension SettingsViewController: UIPickerViewDataSource, UIPickerViewDelegate{
   
   func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
     if component == 0 {
-      return numberArray[row]
+      return String(numberArray[row])
     } else {
       return themesArray[row]
     }

@@ -1,15 +1,15 @@
 //
-//  ViewController.swift
+//  InternetSearchingViewController.swift
 //  Quick search
 //
-//  Created by Кирилл on 6/10/20.
+//  Created by Кирилл on 6/14/20.
 //  Copyright © 2020 Kornev.com. All rights reserved.
 //
 
 import UIKit
 import WebKit
 
-class ViewController: UIViewController {
+class InternetSearchingViewController: UIViewController {
   
   let activityIndicator = UIActivityIndicatorView(style: .large)
   @IBOutlet weak var searchWebView: WKWebView!
@@ -39,6 +39,7 @@ class ViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+//    title = "Web searching" 
     searchTextField.placeholder = "https://"
     searchTextField.delegate = self
   }
@@ -50,7 +51,7 @@ class ViewController: UIViewController {
   
 }
 
-extension ViewController: UITextFieldDelegate {
+extension InternetSearchingViewController: UITextFieldDelegate {
   func textFieldShouldReturn(_ textField: UITextField) -> Bool {
     if let text = textField.text {
       open(text: text)
@@ -59,4 +60,3 @@ extension ViewController: UITextFieldDelegate {
     return true
   }
 }
-

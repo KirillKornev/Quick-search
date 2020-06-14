@@ -10,6 +10,12 @@ import UIKit
 
 class PictureViewController: UIViewController {
   
+  let check = CheckInternetConnection()
+  
+  let fetchImageManager = FetchPicturesManager()
+  
+  var pictures = [ImageModel]()
+  
   let assembly: ControllerBuilderProtocol = ControllerBuilder()
 
   @IBOutlet weak var collectionView: UICollectionView!
@@ -22,7 +28,26 @@ class PictureViewController: UIViewController {
     collectionView.delegate = self
     setupCollectionView()
     createBarItems()
+    check.checkConnection { (result) in
+      if result == false {
+        DispatchQueue.main.async {
+          Alert.showFailurInternetConnectionAlert(on: self) {
+            print("try later")
+          }
+        }
+      }
     }
+    getPictureList(number: 5, theme: "Nature")
+    }
+  
+  func getPictureList(number: Int, theme: String) {
+    fetchImageManager.fetchPicturesUrls(number: number, theme: theme) { (pictures) in
+      self.pictures = pictures
+      DispatchQueue.main.async {
+        self.collectionView.reloadData()
+      }
+    }
+  }
   
   private func setupCollectionView() {
     let nibCell = UINib(nibName: String(describing: PictureCell.self), bundle: nil)
@@ -46,24 +71,27 @@ class PictureViewController: UIViewController {
 extension PictureViewController: UICollectionViewDataSource, UICollectionViewDelegate {
   
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    return 10
+    return pictures.count
   }
   
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: PictureCell.self), for: indexPath) as? PictureCell else { return UICollectionViewCell()}
-//    cell.contentView.backgroundColor = .yellow
+    let url = pictures[indexPath.row].pathURL
+    cell.setDefaultImage()
+
+    fetchImageManager.loadPicture(url: url) { (image) in
+      guard let image = image else { return }
+      DispatchQueue.main.sync {
+        cell.configureCell(image: image)
+      }
+    }
     return cell
   }
-  
 }
 
 extension PictureViewController: SettingsViewDelegate {
-  func sendNumberOfItems(number: String) {
-    print("video VC get \(number)")
-  }
-  
-  func sendTheme(theme: String) {
-    print("video VC get \(theme)")
+  func sendInfo(number: Int, theme: String) {
+    getPictureList(number: number, theme: theme)
   }
   
 }

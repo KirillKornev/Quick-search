@@ -7,8 +7,20 @@
 //
 
 import UIKit
+import AVKit
 
 class VideoViewController: UIViewController {
+  
+  var numberOfItems = 5
+  var theme = "Nature"
+  
+  let check = CheckInternetConnection()
+  
+  var videos = [VideoModel]()
+  
+  let fetchManager: RequstManagerProtocol = RequstManager()
+  
+  let videoManager = FetchVideosManager()
   
   let assembly: ControllerBuilderProtocol = ControllerBuilder()
   
@@ -23,7 +35,25 @@ class VideoViewController: UIViewController {
       tableView.estimatedRowHeight = 400
       tableView.rowHeight = UITableView.automaticDimension
       createBarItems()
+      getVideoList(number: 5, theme: "Nature")
+      check.checkConnection { (result) in
+        if result == false {
+          DispatchQueue.main.async {
+            Alert.showFailurInternetConnectionAlert(on: self) {
+            }
+          }
+        }
+      }
     }
+  
+  func getVideoList(number: Int, theme: String) {
+    videoManager.fetchVideosUrls(number: numberOfItems, theme: theme) { (videoList) in
+      self.videos = videoList
+      DispatchQueue.main.async {
+        self.tableView.reloadData()
+      }
+    }
+  }
   
   func setupTableViewCell() {
     let nibCell = UINib(nibName: String(describing: VideoCell.self), bundle: nil)
@@ -41,32 +71,47 @@ class VideoViewController: UIViewController {
     controller.delegate = self
     present(controller, animated: true, completion: nil)
   }
-
 }
 
+//MARK:- Extension
 extension VideoViewController: UITableViewDataSource, UITableViewDelegate {
   
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return 10
+    return videos.count
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: VideoCell.self), for: indexPath) as? VideoCell else { return UITableViewCell()}
-    let image = UIImage(named: "search2")
-    cell.configureCell(text: "\(indexPath)", image: image!)
+    if videos.count != 0 {
+      cell.deletePicture()
+      let url = videos[indexPath.row].previewURL
+      let description = videos[indexPath.row].decription
+      cell.deletePicture()
+      
+      videoManager.loadPicture(url: url) { (image) in
+        guard let image = image else { return }
+        DispatchQueue.main.async {
+          cell.configureCell(text: description, image: image)
+        }
+      }
+    }
     return cell
   }
   
-  
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    let url = videos[indexPath.row].pathURL
+    let player = VideoPlayer(url: url)
+    let playerController = player.getPlayerViewController()
+    present(playerController, animated: true) {
+      player.playVideo()
+    }
+  }
 }
 
 extension VideoViewController: SettingsViewDelegate {
-  func sendNumberOfItems(number: String) {
-    print("picture VC get \(number)")
-  }
   
-  func sendTheme(theme: String) {
-    print("picture VC get \(theme)")
+  func sendInfo(number: Int, theme: String) {
+    getVideoList(number: 5, theme: theme)
   }
   
 }

@@ -9,13 +9,24 @@
 import UIKit
 
 class PictureCell: UICollectionViewCell {
-
+  
   @IBOutlet weak var pictureImage: UIImageView!
   override func awakeFromNib() {
     
-        super.awakeFromNib()
-    guard let image = UIImage(named: "placeholder") else { return }
+    super.awakeFromNib()
+    setDefaultImage()
+    pictureImage.contentMode = .scaleAspectFill
+    pictureImage.layer.cornerRadius = 0.05 * contentView.frame.width
+  }
+  
+  func setDefaultImage() {
+    guard let image = UIImage(named: IconPath.placeholderPicture) else { return }
     pictureImage.image = image
-    }
+  }
+  
+  func configureCell(image: UIImage) {
+    pictureImage.image = image
+    
+  }
 
 }
